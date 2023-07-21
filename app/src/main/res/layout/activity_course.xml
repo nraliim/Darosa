@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.course.CourseActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_header"
+            android:layout_width="300dp"
+            android:layout_height="450dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/img_yanbua"
+            tools:src="@drawable/yanbua_pemula"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/yanbua_jilid_pemula"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:textColor="?android:textColorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_header"
+            tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/tv_deskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:layout_marginHorizontal="16dp"
+            android:text="@string/dummy_text"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_judul"
+            tools:targetApi="o" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_deskripsi"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout="@layout/fragment_jilid_pemula" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

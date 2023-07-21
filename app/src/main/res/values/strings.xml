@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Darosa</string>
+    <string name="siswa">Siswa</string>
+    <string name="guru">Guru</string>
+    <string name="saya_ingin_masuk_sebagai">Saya ingin masuk sebagai</string>
+    <string name="password_error">Kata sandi kurang dari 6 karakter</string>
+    <string name="have_account">Sudah punya akun?</string>
+    <string name="dont_have_account">Belum punya akun?</string>
+    <string name="login">Masuk</string>
+    <string name="register">Daftar</string>
+    <string name="input_password">Masukkan kata sandi</string>
+    <string name="input_email">Masukkan email</string>
+    <string name="input_name">Masukkan nama</string>
+    <string name="input_address">Masukkan alamat</string>
+    <string name="input_phone_number">Masukkan nomor hp</string>
+    <string name="input_gender">Pilih jenis kelamin</string>
+    <string name="please_login">Login</string>
+    <string name="please_register">Register</string>
+    <string name="male">Laki-laki</string>
+    <string name="female">Perempuan</string>
+    <string name="select_gender">Pilih jenis kelamin</string>
+    <string name="yanbua_jilid_pemula">Yanbu\'a Jilid Pemula</string>
+    <string name="yanbua_jilid_1">Yanbu\'a Jilid 1</string>
+    <string name="yanbua_jilid_2">Yanbu\'a Jilid 2</string>
+    <string name="yanbua_jilid_3">Yanbu\'a Jilid 3</string>
+    <string name="title_jilid_pemula">Yanbu\'a \nJilid Pemula</string>
+    <string name="title_jilid_1">Yanbu\'a \nJilid 1</string>
+    <string name="title_jilid_2">Yanbu\'a \nJilid 2</string>
+    <string name="title_jilid_3">Yanbu\'a \nJilid 3</string>
+    <string name="done">selesai</string>
+    <string name="percent">%</string>
+    <string name="assalamualaikum">Assalamu\'alaikum,</string>
+    <string name="dummy_nama">Muhammad Nur Aliim</string>
+    <string name="dummy_email">nraliim12@gmail.com</string>
+    <string name="dummy_phone">085640180710</string>
+    <string name="dummy_address">Loram Kulon</string>
+    <string name="materi_pembelajaran">Materi Pembelajaran</string>
+    <string name="logout">Keluar</string>
+    <string name="deskripsi_jilid_pemula">Yanbu\'a Jilid Pemula adalah metode tahap awal belajar membaca al-Qur\'an. Anak dikenalkan  cara membaca yang baik dan benar huruf-huruf hija\'iyyah secara satu per satu. Agar anak dapat faham dan mampu mengenali huruf hija\'iyyah.</string>
+    <string name="deskripsi_jilid_1">Yanbu\'a Jilid 1 adalah metode pembelajaran al-Qur\'an tahap lebih lanjut tentang pemahaman anak pada huruf hija\'iyyah. Anak diajarkan cara membaca yang baik dan benar huruf-huruf hija\'iyyah berharakat, dan anak juga diajarkan membaca sebuah kalimat yang terdiri dari kumpulan huruf hija\'iyyah.</string>
+    <string name="deskripsi_jilid_2">Yanbu\'a Jilid 2 adalah metode pembelajaran al-Qur\'an pada tahap anak fokus kepada bacaan panjang atau pendek harokat pada suatu kalimat. Anak juga diajarkan cara membaca angka arab mulai dari satuan hingga ratusan. Pada halaman-halaman akhir, anak diajarkan membaca satu lafadz utuh yang terdiri dari beberapa kalimat.</string>
+    <string name="deskripsi_jilid_3">Yanbu\'a Jilid 3 adalah metode pembelajaran al-Qur\'an pada tahap anak diajarkan cara membaca huruf qolqolah dan huruf bertasydid. Anak diberikan contoh bacaan dari potongan ayat al-Qur\'an agar anak lebih mudah memahami.</string>
+    <string name="deskripsi_profil_madrasah">TPQ Tisarul Murottilin adalah Lembaga Taman Pendidikan Al-Qur\'an yang mempunyai peranan yang sangat penting dan strategis sebagai tempat pertama untuk mengenalkan Ilmu Agama khususnya dalam membaca dan belajar Al-Qur\'an kepada anak usia dini agar menjadi insan generasi Qur\'ani yang mengikuti perkembangan dan pertumbuhan zaman.\n\nTPQ Tisarul Murottilin yang terletak di Jalan Masjid At-Taqwa No. 795, Desa Loram Kulon RT 09 RW 04, Kecamatan Jati, Kabupaten Kudus, Jawa Tengah 59344.\n\nVisi\n"Kuat dalam Iman, santun dalam sikap, dan sukses meraih tujuan"\n\nMisi\n1. Menyelenggarakan proses pembelajaran Al-Qur\'an yang berkualitas.\n2. Menyelenggarakan pendidikan Al-Qur\'an yang berorientasi pada pemantapan aqidah menjalankan syari\'at Islam yang berhaluan Ahlussunnah Waljama\'ah.\n\nTujuan\n"Menyiapkan kader-kader Islam yang Qur\'ani, berakhlaqul karimah berhaluan Ahlussunnah Waljama'ah."</string>
+    <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="belajar_sekarang">Belajar Sekarang</string>
+    <string name="page_one">Halaman 1</string>
+    <string name="checklist">checklist</string>
+    <string name="img_yanbua">image_yanbua</string>
+    <string name="profil">Profil</string>
+    <string name="profil_user">Profil Pengguna</string>
+    <string name="edit_profil">Edit Profil</string>
+    <string name="phone_number">Nomor Handphone</string>
+    <string name="address">Alamat</string>
+    <string name="gender">Jenis Kelamin</string>
+    <string name="about">Tentang</string>
+    <string name="about_apps">Tentang Aplikasi</string>
+    <string name="about_yanbua">Tentang Kitab Yanbu\'a</string>
+    <string name="about_dev">Tentang Pengembang</string>
+    <string name="save">Simpan</string>
+    <string name="data_siswa">Data Siswa</string>
+    <string name="input_name_student">Masukkan nama siswa</string>
+    <string name="all_data">Lihat semua data</string>
+    <string name="not_found">Data siswa tidak ditemukan</string>
+    <string name="welcome">Selamat Datang di Darosa App</string>
+    <string name="fullname">Nama Lengkap</string>
+    <string name="progress_belajar">Progress Belajar</string>
+    <string name="profil_siswa">Profil Siswa</string>
+    <string name="empty_data">Belum ada data</string>
+    <string name="search_data">Cari Data Siswa</string>
+    <string name="detail_siswa">Detail Siswa</string>
+
+    <string-array name="gender">
+        <item>Laki-laki</item>
+        <item>Perempuan</item>
+    </string-array>
+
+    <string name="network_err">Jaringan tidak tersedia, \n Mohon periksa kembali jaringan Anda.</string>
+    <string name="main_meu">Menu Utama</string>
+    <string name="profil_madrasah">Profil Madrasah</string>
+
+</resources>

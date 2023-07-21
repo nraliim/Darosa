@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profil.EditProfilActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CircleImage"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="-25dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/camera"
+        app:layout_constraintStart_toEndOf="@id/iv_photo"
+        app:layout_constraintTop_toTopOf="@id/iv_photo"
+        tools:ignore="contentDescription" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="32dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_photo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:autofillHints="name"
+            android:background="@drawable/lavender_box"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/lavender_dark"
+            android:hint="@string/input_name"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:paddingHorizontal="16dp"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp"
+            tools:targetApi="m" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:autofillHints="phone"
+            android:background="@drawable/lavender_box"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/lavender_dark"
+            android:hint="@string/input_phone_number"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:paddingHorizontal="16dp"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp"
+            tools:targetApi="m" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/gender"
+            android:textColor="?android:textColorPrimary" />
+
+        <RadioGroup
+            android:id="@+id/rg_gender"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/lavender_box"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp">
+
+            <RadioButton
+                android:id="@+id/rb_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/male"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rb_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/female"
+                android:textSize="14sp" />
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_address"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:autofillHints="postalAddress"
+            android:background="@drawable/lavender_box"
+            android:drawableStart="@drawable/ic_address"
+            android:drawablePadding="16dp"
+            android:drawableTint="@color/lavender_dark"
+            android:hint="@string/input_address"
+            android:inputType="textPostalAddress"
+            android:maxLines="1"
+            android:paddingHorizontal="16dp"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp"
+            tools:targetApi="m" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/lavender_dark"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:padding="10dp"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:cornerRadius="12dp" />
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/progress_bar_dialog"
+        layout="@layout/custom_progress_bar"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

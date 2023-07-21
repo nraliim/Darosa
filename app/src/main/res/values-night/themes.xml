@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Darosa" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue_200</item>
+        <item name="colorSecondaryVariant">@color/blue_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CircleImage" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.RoundedImage" parent="">
+        <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="Theme.Darosa.NoActionbar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="CustomToolbar">
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="navigationIcon">@drawable/ic_arrow_back</item>
+    </style>
+
+</resources>
