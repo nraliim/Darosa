@@ -2,8 +2,8 @@ package com.darosa.app.ui.profil
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.darosa.app.R
-import com.darosa.app.data.About
 import com.darosa.app.databinding.ActivityProfilMadrasahBinding
 
 class ProfilMadrasahActivity : AppCompatActivity() {
@@ -34,8 +34,8 @@ class ProfilMadrasahActivity : AppCompatActivity() {
     }
 
     private fun setDataProfil() {
-        binding.apply {
-            ivProfilMadrasah.setImageResource(R.drawable.quran)
-        }
+        Glide.with(this)
+            .load(R.drawable.tpq)
+            .into(binding.ivProfilMadrasah)
     }
 }

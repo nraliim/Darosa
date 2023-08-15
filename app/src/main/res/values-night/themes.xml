@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.Darosa" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -21,19 +21,6 @@
 
     <style name="ShapeAppearanceOverlay.App.RoundedImage" parent="">
         <item name="cornerSize">10%</item>
-    </style>
-
-    <style name="Theme.Darosa.NoActionbar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-    </style>
-
-    <style name="CustomToolbar">
-        <item name="android:theme">@style/ThemeOverlay.AppCompat.Light</item>
-        <item name="android:elevation">4dp</item>
-        <item name="android:background">@color/white</item>
-        <item name="navigationIcon">@drawable/ic_arrow_back</item>
     </style>
 
 </resources>

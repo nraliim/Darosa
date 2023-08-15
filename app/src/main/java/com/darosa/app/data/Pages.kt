@@ -10,8 +10,6 @@ data class Jilid(
 @Parcelize
 data class Pages(
     val halaman: String? = null,
-//    val materi: String? = null,
-//    val audio: String? = null,
     val code: Long? = null,
     @field:JvmField
     val isChecked: Boolean? = false

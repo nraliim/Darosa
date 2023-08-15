@@ -220,7 +220,6 @@ class EditProfilActivity : AppCompatActivity() {
     }
 
     companion object {
-        val EXTRA_PROFIL = "extra_profil"
         var NEW_GENDER = ""
     }
 

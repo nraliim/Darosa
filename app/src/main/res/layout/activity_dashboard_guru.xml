@@ -72,7 +72,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="@string/main_meu"
+        android:text="@string/main_menu"
         android:textColor="?android:textColorPrimary"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"

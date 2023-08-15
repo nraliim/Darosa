@@ -1,22 +1,17 @@
 package com.darosa.app.ui.profil
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
-import com.bumptech.glide.Glide
+import androidx.appcompat.app.AppCompatActivity
 import com.darosa.app.R
 import com.darosa.app.data.About
-import com.darosa.app.data.User
 import com.darosa.app.databinding.ActivityProfilBinding
-import com.darosa.app.databinding.ToolbarBinding
-import com.darosa.app.repository.UserRepository
 import com.darosa.app.ui.about.AboutActivity
 import com.darosa.app.ui.about.AboutActivity.Companion.EXTRA_ABOUT
 import com.darosa.app.ui.auth.LoginActivity
-import com.darosa.app.ui.profil.EditProfilActivity.Companion.EXTRA_PROFIL
 import com.darosa.app.utils.loadImageUrl
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -28,10 +23,9 @@ class ProfilActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfilBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
-    private lateinit var user: User
 
     companion object {
-        val TAG = "ProfilActivity"
+        const val TAG = "ProfilActivity"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -114,8 +108,8 @@ class ProfilActivity : AppCompatActivity() {
             binding.clAboutApps.setOnClickListener {
                 val aboutApps = About(
                     getString(R.string.about_apps),
-                    R.drawable.recite_quran,
-                    getString(R.string.dummy_text)
+                    R.drawable.quran,
+                    getString(R.string.deskripsi_apps)
                 )
                 val intent = Intent(this, AboutActivity::class.java)
                 intent.putExtra(EXTRA_ABOUT, aboutApps)
@@ -124,8 +118,8 @@ class ProfilActivity : AppCompatActivity() {
             binding.clAboutYanbua.setOnClickListener {
                 val aboutYanbua = About(
                     getString(R.string.about_yanbua),
-                    R.drawable.recite_quran,
-                    getString(R.string.dummy_text)
+                    R.drawable.yanbua_1,
+                    getString(R.string.deskripsi_yanbua)
                 )
                 val intent = Intent(this, AboutActivity::class.java)
                 intent.putExtra(EXTRA_ABOUT, aboutYanbua)
@@ -134,8 +128,8 @@ class ProfilActivity : AppCompatActivity() {
             binding.clAboutDev.setOnClickListener {
                 val aboutDev = About(
                     getString(R.string.about_dev),
-                    R.drawable.recite_quran,
-                    getString(R.string.dummy_text)
+                    R.drawable.developer,
+                    getString(R.string.deskripsi_dev)
                 )
                 val intent = Intent(this, AboutActivity::class.java)
                 intent.putExtra(EXTRA_ABOUT, aboutDev)

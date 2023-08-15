@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">Darosa</string>
-    <string name="siswa">Siswa</string>
-    <string name="guru">Guru</string>
-    <string name="saya_ingin_masuk_sebagai">Saya ingin masuk sebagai</string>
     <string name="password_error">Kata sandi kurang dari 6 karakter</string>
     <string name="have_account">Sudah punya akun?</string>
     <string name="dont_have_account">Belum punya akun?</string>
@@ -13,7 +10,6 @@
     <string name="input_name">Masukkan nama</string>
     <string name="input_address">Masukkan alamat</string>
     <string name="input_phone_number">Masukkan nomor hp</string>
-    <string name="input_gender">Pilih jenis kelamin</string>
     <string name="please_login">Login</string>
     <string name="please_register">Register</string>
     <string name="male">Laki-laki</string>
@@ -23,10 +19,6 @@
     <string name="yanbua_jilid_1">Yanbu\'a Jilid 1</string>
     <string name="yanbua_jilid_2">Yanbu\'a Jilid 2</string>
     <string name="yanbua_jilid_3">Yanbu\'a Jilid 3</string>
-    <string name="title_jilid_pemula">Yanbu\'a \nJilid Pemula</string>
-    <string name="title_jilid_1">Yanbu\'a \nJilid 1</string>
-    <string name="title_jilid_2">Yanbu\'a \nJilid 2</string>
-    <string name="title_jilid_3">Yanbu\'a \nJilid 3</string>
     <string name="done">selesai</string>
     <string name="percent">%</string>
     <string name="assalamualaikum">Assalamu\'alaikum,</string>
@@ -56,26 +48,19 @@
     <string name="about_apps">Tentang Aplikasi</string>
     <string name="about_yanbua">Tentang Kitab Yanbu\'a</string>
     <string name="about_dev">Tentang Pengembang</string>
+    <string name="deskripsi_apps">Darosa adalah sebuah aplikasi belajar mengaji yang dikhususkan untuk anak-anak pada TPQ Tisarul Murottilin Kudus. Aplikasi ini dikembangkan oleh pengembang sebagai tugas akhir untuk memperoleh gelar Sarjana. Materi pembelajaran pada Aplikasi Darosa ini bersumber dari Kitab Yanbu\'a Jilid Pemula sampai dengan Jilid 3. Pengembang berharap aplikasi dapat bermanfaat dan membantu siapapun yang ingin belajar mengaji.</string>
+    <string name="deskripsi_yanbua">Yanbu\'a adalah sebuah buku/kitab tentang cara membaca dan menulis Al-Qur\'an yang bisa dimanfaatkan oleh ummat, sehingga bisa terlatih kefasihannya mulai anak-anak. Yanbu\'a disusun dan diterbitkan oleh Pondok Tahfidh Yanbu\'ul Qur\'an Kudus. Yanbu\'a sendiri memiliki makna "sumber", yang mengambil dari kata Yanbu\'ul Qur\'an yang berarti sumber Al-Qur\'an, nama yang sangat digemari dan disenangi oleh seorang guru besar Al-Qur\'an, beliau Al Muqri\' Simbah KH. M. Arwani Amin.</string>
+    <string name="deskripsi_dev">Muhammad Nur Aliim adalah seorang mahasiswa tingkat akhir pada jurusan Teknik Informatika Universitas Muria Kudus. Saat pengembang sedang mengerjakan tugas akhir penelitian untuk mengembangkan Aplikasi Belajar Mengaji Darosa ini. Mohon doanya untuk pengembang agar selalu diberikan kemudahan dan dapat menyelesaikan tugas akhir dan mendapatkan gelar sarjana.</string>
     <string name="save">Simpan</string>
     <string name="data_siswa">Data Siswa</string>
     <string name="input_name_student">Masukkan nama siswa</string>
-    <string name="all_data">Lihat semua data</string>
     <string name="not_found">Data siswa tidak ditemukan</string>
-    <string name="welcome">Selamat Datang di Darosa App</string>
     <string name="fullname">Nama Lengkap</string>
     <string name="progress_belajar">Progress Belajar</string>
     <string name="profil_siswa">Profil Siswa</string>
-    <string name="empty_data">Belum ada data</string>
-    <string name="search_data">Cari Data Siswa</string>
     <string name="detail_siswa">Detail Siswa</string>
-
-    <string-array name="gender">
-        <item>Laki-laki</item>
-        <item>Perempuan</item>
-    </string-array>
-
     <string name="network_err">Jaringan tidak tersedia, \n Mohon periksa kembali jaringan Anda.</string>
-    <string name="main_meu">Menu Utama</string>
+    <string name="main_menu">Menu Utama</string>
     <string name="profil_madrasah">Profil Madrasah</string>
-
+    <string name="selesai">Selesai</string>
 </resources>

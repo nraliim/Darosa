@@ -51,7 +51,7 @@
             android:layout_height="48dp"
             android:layout_margin="16dp"
             android:enabled="true"
-            android:text="Selesai"
+            android:text="@string/selesai"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

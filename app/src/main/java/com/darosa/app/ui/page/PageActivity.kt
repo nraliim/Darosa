@@ -5,7 +5,6 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.darosa.app.R
 import com.darosa.app.data.Pages
 import com.darosa.app.databinding.ActivityPageBinding
 import com.darosa.app.utils.hide

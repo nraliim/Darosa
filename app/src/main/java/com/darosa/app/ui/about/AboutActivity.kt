@@ -1,8 +1,8 @@
 package com.darosa.app.ui.about
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.darosa.app.R
+import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.darosa.app.data.About
 import com.darosa.app.databinding.ActivityAboutBinding
 
@@ -38,10 +38,10 @@ class AboutActivity : AppCompatActivity() {
     }
 
     private fun setDetailAbout(about: About) {
-        binding.apply {
-            ivPhotoAbout.setImageResource(about.photoAbout)
-            tvAbout.text = about.description
-        }
+        Glide.with(this)
+            .load(about.photoAbout)
+            .into(binding.ivPhotoAbout)
+        binding.tvAbout.text = about.description
     }
 
     companion object{

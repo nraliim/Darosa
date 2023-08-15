@@ -13,7 +13,7 @@ class CourseViewModel : ViewModel() {
     private val userId = FirebaseAuth.getInstance().currentUser!!.uid
     private val db = FirebaseFirestore.getInstance()
     private val _allPages = MutableLiveData<List<Pages>>()
-    val allPages: LiveData<List<Pages>> get() = _allPages
+    private val allPages: LiveData<List<Pages>> get() = _allPages
 
     fun getCourseData(query: String) : LiveData<List<Pages>> {
         db.collection(query).document(userId)
@@ -45,7 +45,7 @@ class CourseViewModel : ViewModel() {
     }
 
     companion object {
-        val TAG = "CourseViewModel"
+        const val TAG = "CourseViewModel"
     }
 
 }

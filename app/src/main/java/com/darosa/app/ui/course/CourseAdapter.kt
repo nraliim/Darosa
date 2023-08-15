@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.darosa.app.R
 import com.darosa.app.data.Pages
 import com.darosa.app.databinding.ItemRowPageBinding
-import com.darosa.app.ui.datasiswa.DetailSiswaActivity
 import com.darosa.app.ui.page.PageActivity
 import com.darosa.app.ui.page.PageActivity.Companion.EXTRA_PAGES
 
