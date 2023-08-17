@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.detail.JilidTigaFragment">
 
-    <TextView
-        android:id="@+id/tv_belajar_sekarang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/belajar_sekarang"
-        android:textColor="?android:textColorPrimary"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_pages_tiga"
         android:layout_width="match_parent"
@@ -28,7 +15,7 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_belajar_sekarang"
+        app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/item_row_page" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -94,6 +94,7 @@ class RegisterActivity : AppCompatActivity() {
                                 "https://ui-avatars.com/api/?background=8692F7&color=fff&size=100&rounded=true&name=$name"
                             val userId = auth.currentUser!!.uid
                             val data = User(
+                                userId,
                                 name.toString(),
                                 email.toString(),
                                 GENDER,
