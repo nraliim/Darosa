@@ -1,6 +1,7 @@
 package com.darosa.app.ui.profil
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -26,6 +27,7 @@ class ProfilActivity : AppCompatActivity() {
 
     companion object {
         const val TAG = "ProfilActivity"
+        const val FORM_URL = "https://forms.gle/r9CspwqMZcz9EzPSA"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,9 +84,6 @@ class ProfilActivity : AppCompatActivity() {
                 val address = it.get("alamat")
                 val gender = it.get("gender")
 
-//                val dataUser = User(nama, )
-//                dataUser.add(User(nama, ))
-
                 binding.apply {
                     ivPhoto.loadImageUrl(fotoProfil.toString())
                     tvNama.text = nama.toString()
@@ -133,6 +132,10 @@ class ProfilActivity : AppCompatActivity() {
                 )
                 val intent = Intent(this, AboutActivity::class.java)
                 intent.putExtra(EXTRA_ABOUT, aboutDev)
+                startActivity(intent)
+            }
+            binding.cvFeedback.setOnClickListener {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(FORM_URL))
                 startActivity(intent)
             }
         }

@@ -63,4 +63,6 @@
     <string name="main_menu">Menu Utama</string>
     <string name="profil_madrasah">Profil Madrasah</string>
     <string name="selesai">Selesai</string>
+    <string name="berikan_masukan">Berikan Masukan</string>
+    <string name="feedback">Feedback</string>
 </resources>
