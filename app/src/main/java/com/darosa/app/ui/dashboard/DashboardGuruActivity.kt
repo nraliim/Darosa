@@ -10,6 +10,7 @@ import com.darosa.app.databinding.ActivityDashboardGuruBinding
 import com.darosa.app.ui.datasiswa.DataSiswaActivity
 import com.darosa.app.ui.profil.ProfilActivity
 import com.darosa.app.ui.profil.ProfilMadrasahActivity
+import com.darosa.app.ui.score.NilaiSiswaActivity
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
 import com.google.firebase.auth.FirebaseAuth
@@ -51,6 +52,9 @@ class DashboardGuruActivity : AppCompatActivity() {
         }
         binding.cvProfilMadrasah.setOnClickListener {
             startActivity(Intent(this, ProfilMadrasahActivity::class.java))
+        }
+        binding.cvNilaiSiswa.setOnClickListener {
+            startActivity(Intent(this, NilaiSiswaActivity::class.java))
         }
     }
 

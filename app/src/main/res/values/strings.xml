@@ -54,7 +54,7 @@
     <string name="save">Simpan</string>
     <string name="data_siswa">Data Siswa</string>
     <string name="input_name_student">Masukkan nama siswa</string>
-    <string name="not_found">Data siswa tidak ditemukan</string>
+    <string name="not_found">Data tidak ditemukan</string>
     <string name="fullname">Nama Lengkap</string>
     <string name="progress_belajar">Progress Belajar</string>
     <string name="profil_siswa">Profil Siswa</string>
@@ -65,4 +65,10 @@
     <string name="selesai">Selesai</string>
     <string name="berikan_masukan">Berikan Masukan</string>
     <string name="feedback">Feedback</string>
+    <string name="nilai_siswa">Nilai Siswa</string>
+    <string name="nama">Nama             :</string>
+    <string name="jilid_pemula">Jilid Pemula :</string>
+    <string name="jilid_1">Jilid 1               :</string>
+    <string name="jilid_2">Jilid 2              :</string>
+    <string name="jilid_3">Jilid 3              :</string>
 </resources>
