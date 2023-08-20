@@ -1,20 +1,37 @@
 package com.darosa.app.ui.score
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.darosa.app.data.Score
-import com.darosa.app.repository.ScoreRepository
+import com.google.firebase.firestore.FirebaseFirestore
 
 class NilaiSiswaViewModel : ViewModel() {
 
-    private val repository : ScoreRepository = ScoreRepository().getInstance()
+    private val db = FirebaseFirestore.getInstance().collection("nilai")
     private val _allScores = MutableLiveData<List<Score>>()
-    val allScores : LiveData<List<Score>> = _allScores
+    private val allScores : LiveData<List<Score>>  get() = _allScores
 
-    init {
+    fun getScoreData() : LiveData<List<Score>> {
+        db.orderBy("nama").addSnapshotListener { snapshot, exception ->
+            exception?.let {
+                Log.d(TAG, it.message.toString())
+                return@addSnapshotListener
+            }
+            snapshot?.let {
+                val dataScoreList = mutableListOf<Score>()
+                for (document in it) {
+                    val score = document.toObject(Score::class.java)
+                    dataScoreList.add(score)
+                }
+                _allScores.value = dataScoreList
+            }
+        }
+        return allScores
+    }
 
-        repository.loadScores(_allScores)
-
+    companion object {
+        const val TAG = "NilaiSiswaViewModel"
     }
 }

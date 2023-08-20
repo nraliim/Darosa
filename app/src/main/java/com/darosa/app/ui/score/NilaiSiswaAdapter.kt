@@ -1,5 +1,6 @@
 package com.darosa.app.ui.score
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -36,16 +37,16 @@ class NilaiSiswaAdapter : RecyclerView.Adapter<NilaiSiswaAdapter.ViewHolder>() {
     inner class ViewHolder(private val binding: ItemRowScoresBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(score: Score) {
             binding.apply {
-                tvName.text = score.nama.toString()
+                tvName.text = score.nama
                 tvJilid0.text = score.jilid0.toString()
                 tvJilid1.text = score.jilid1.toString()
                 tvJilid2.text = score.jilid2.toString()
                 tvJilid3.text = score.jilid3.toString()
 
                 itemView.setOnClickListener {
-//                    val intent = Intent(it.context, PageActivity::class.java)
-//                    intent.putExtra(PageActivity.EXTRA_PAGES, score)
-//                    it.context.startActivity(intent)
+                    val intent = Intent(it.context, EditNilaiActivity::class.java)
+                    intent.putExtra(EditNilaiActivity.EXTRA_SCORE, score)
+                    it.context.startActivity(intent)
                 }
             }
         }
@@ -62,7 +63,7 @@ class NilaiSiswaAdapter : RecyclerView.Adapter<NilaiSiswaAdapter.ViewHolder>() {
         override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
             val oldScore = oldScoreList[oldItemPosition]
             val newScore = newScoreList[newItemPosition]
-            return oldScore.nama == newScore.nama && oldScore.jilid0 == newScore.jilid0
+            return oldScore.jilid0 == newScore.jilid0 && oldScore.jilid1 == newScore.jilid1 && oldScore.jilid2 == newScore.jilid2 && oldScore.jilid3 == newScore.jilid3
         }
     }
 }

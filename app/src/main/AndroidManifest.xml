@@ -17,6 +17,12 @@
         android:theme="@style/Theme.Darosa"
         tools:targetApi="31">
         <activity
+            android:name=".ui.score.EditNilaiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.score.AddNilaiActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.score.NilaiSiswaActivity"
             android:exported="false" />
         <activity

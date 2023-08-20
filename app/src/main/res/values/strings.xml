@@ -71,4 +71,7 @@
     <string name="jilid_1">Jilid 1               :</string>
     <string name="jilid_2">Jilid 2              :</string>
     <string name="jilid_3">Jilid 3              :</string>
+    <string name="input_score">Masukkan Nilai</string>
+    <string name="add_score">Tambah Nilai Siswa</string>
+    <string name="edit_score">Edit Nilai Siswa</string>
 </resources>
