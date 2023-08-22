@@ -1,5 +1,6 @@
 package com.darosa.app.ui.detail
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.darosa.app.data.Pages
 import com.darosa.app.databinding.FragmentJilidTigaBinding
 import com.darosa.app.ui.course.CourseAdapter
 import com.darosa.app.ui.course.CourseViewModel
+import com.darosa.app.ui.page.PageSiswaActivity
+import com.darosa.app.utils.ItemClickListener
 
 class JilidTigaFragment : Fragment() {
 
@@ -44,6 +48,13 @@ class JilidTigaFragment : Fragment() {
         viewModel.getCourseData("jilid3").observe(viewLifecycleOwner) {
             adapter.setPages(it)
         }
+        adapter.setOnItemClickListener(object : ItemClickListener {
+            override fun onItemClick(pages: Pages) {
+                val intent = Intent(context, PageSiswaActivity::class.java)
+                intent.putExtra(PageSiswaActivity.EXTRA_PAGES, pages)
+                startActivity(intent)
+            }
+        })
     }
 
     override fun onDestroyView() {

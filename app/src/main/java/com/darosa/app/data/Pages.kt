@@ -12,5 +12,5 @@ data class Pages(
     val halaman: String? = null,
     val code: Long? = null,
     @field:JvmField
-    val isChecked: Boolean? = false
+    val isChecked: Long? = 10
 ) : Parcelable

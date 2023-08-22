@@ -36,15 +36,15 @@ class NilaiSiswaActivity : AppCompatActivity() {
         }
 
         viewModel.getScoreData().observe(this) { listScores ->
-//            listScores.let {
-//                if (it.isEmpty()) {
-//                    binding.rvNilaiSiswa.hide()
-//                    binding.layoutEmptyData.root.show()
-//                } else {
-//                    adapter.setScores(it)
-//                }
-//            }
-            adapter.setScores(listScores)
+            listScores.let {
+                if (it.isEmpty()) {
+                    binding.rvNilaiSiswa.hide()
+                    binding.layoutEmptyData.root.show()
+                } else {
+                    adapter.setScores(it)
+                }
+            }
+//            adapter.setScores(listScores)
         }
     }
 

@@ -74,4 +74,5 @@
     <string name="input_score">Masukkan Nilai</string>
     <string name="add_score">Tambah Nilai Siswa</string>
     <string name="edit_score">Edit Nilai Siswa</string>
+    <string name="validasi">Validasi</string>
 </resources>

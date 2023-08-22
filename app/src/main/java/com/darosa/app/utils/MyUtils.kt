@@ -18,3 +18,9 @@ fun ImageView.loadImageUrl(url: String) {
         .centerCrop()
         .into(this)
 }
+
+fun ImageView.loadImage(img: Int) {
+    Glide.with(this.context.applicationContext)
+        .load(img)
+        .into(this)
+}

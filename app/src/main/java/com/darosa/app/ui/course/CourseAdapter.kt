@@ -1,6 +1,5 @@
 package com.darosa.app.ui.course
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -8,13 +7,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.darosa.app.R
 import com.darosa.app.data.Pages
 import com.darosa.app.databinding.ItemRowPageBinding
-import com.darosa.app.ui.page.PageActivity
-import com.darosa.app.ui.page.PageActivity.Companion.EXTRA_PAGES
+import com.darosa.app.utils.ItemClickListener
 
 class CourseAdapter : RecyclerView.Adapter<CourseAdapter.ViewHolder>() {
 
+    private lateinit var onItemClickListener: ItemClickListener
     private var listPages = ArrayList<Pages>()
 
+    fun setOnItemClickListener(onItemClickListener: ItemClickListener) {
+        this.onItemClickListener = onItemClickListener
+    }
     fun setPages(itemPages: List<Pages>) {
         val diffCallback = PageDiffCallback(listPages, itemPages)
         val diffResult = DiffUtil.calculateDiff(diffCallback)
@@ -41,16 +43,14 @@ class CourseAdapter : RecyclerView.Adapter<CourseAdapter.ViewHolder>() {
         fun bind(pages: Pages) {
             binding.apply {
                 tvPage.text = pages.halaman.toString()
-                if (pages.isChecked == true) {
-                    ivChecklist.setImageResource(R.drawable.ic_check)
-                } else {
-                    ivChecklist.setImageResource(R.drawable.ic_circle)
+                when (pages.isChecked) {
+                    10L -> ivChecklist.setImageResource(R.drawable.ic_circle)
+                    20L -> ivChecklist.setImageResource(R.drawable.ic_radio_check)
+                    30L -> ivChecklist.setImageResource(R.drawable.ic_check)
                 }
 
                 itemView.setOnClickListener {
-                    val intent = Intent(it.context, PageActivity::class.java)
-                    intent.putExtra(EXTRA_PAGES, pages)
-                    it.context.startActivity(intent)
+                    onItemClickListener.onItemClick(pages)
                 }
             }
         }

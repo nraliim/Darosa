@@ -32,7 +32,7 @@ class CourseViewModel : ViewModel() {
 //                                page["materi"] as? String,
 //                                page["audio"] as? String,
                                 page["code"] as? Long,
-                                page["isChecked"] as? Boolean
+                                page["isChecked"] as? Long
                             )
                         }
 //                        pagesList.addAll(pages)

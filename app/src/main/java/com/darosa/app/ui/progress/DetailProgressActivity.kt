@@ -1,5 +1,6 @@
 package com.darosa.app.ui.progress
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -8,9 +9,10 @@ import com.darosa.app.data.Pages
 import com.darosa.app.data.Progress
 import com.darosa.app.databinding.ActivityDetailProgressBinding
 import com.darosa.app.ui.course.CourseAdapter
+import com.darosa.app.ui.page.PageGuruActivity
+import com.darosa.app.utils.ItemClickListener
 import com.google.firebase.firestore.FirebaseFirestore
 
-@Suppress("DEPRECATION")
 class DetailProgressActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailProgressBinding
@@ -30,6 +32,7 @@ class DetailProgressActivity : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
         adapter = CourseAdapter()
 
+        @Suppress("DEPRECATION")
         val userProgress = intent.getParcelableExtra<Progress>(EXTRA_PROGRESS) as Progress
         initializeData(userProgress)
 
@@ -41,6 +44,14 @@ class DetailProgressActivity : AppCompatActivity() {
             rvPages.layoutManager = LinearLayoutManager(applicationContext)
             rvPages.adapter = adapter
         }
+
+        adapter.setOnItemClickListener(object : ItemClickListener {
+            override fun onItemClick(pages: Pages) {
+                val intent = Intent(applicationContext, PageGuruActivity::class.java)
+                intent.putExtra(PageGuruActivity.EXTRA_PAGES, pages)
+                startActivity(intent)
+            }
+        })
 
         db.collection(progress.query.toString()).document(progress.user?.id.toString())
             .addSnapshotListener { value, error ->
@@ -56,7 +67,7 @@ class DetailProgressActivity : AppCompatActivity() {
                             Pages(
                                 page["halaman"] as? String,
                                 page["code"] as? Long,
-                                page["isChecked"] as? Boolean
+                                page["isChecked"] as? Long
                             )
                         }
                         adapter.setPages(pages)

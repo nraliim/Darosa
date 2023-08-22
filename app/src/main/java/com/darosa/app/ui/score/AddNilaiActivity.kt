@@ -30,7 +30,6 @@ class AddNilaiActivity : AppCompatActivity() {
         db = FirebaseFirestore.getInstance()
 
         initializeToolbar()
-        loadUsers()
         saveUserScore()
     }
 
@@ -48,75 +47,19 @@ class AddNilaiActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadUsers() {
-        db.collection("user").whereEqualTo("isGuru", false)
-            .get()
-            .addOnSuccessListener {
-                val userData: MutableList<String> = mutableListOf()
-
-                for (document in it) {
-                    val id = document.id
-                    val nama = document.getString("nama")
-                    nama?.let {
-                        userData.add(it)
-                    }
-                }
-
-                val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, userData)
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                binding.spinNama.adapter = adapter
-
-                binding.spinNama.onItemSelectedListener =
-                    object : AdapterView.OnItemSelectedListener {
-                        override fun onItemSelected(
-                            parent: AdapterView<*>?,
-                            view: View?,
-                            position: Int,
-                            id: Long
-                        ) {
-                            val name = parent?.getItemAtPosition(position).toString()
-                            NAME = name
-                            fetchUserId(name)
-                        }
-
-                        override fun onNothingSelected(parent: AdapterView<*>?) {
-                            // Do nothing
-                        }
-                    }
-            }
-            .addOnFailureListener {
-                Log.d("AddNilaiActivity", it.message.toString())
-                return@addOnFailureListener
-            }
-    }
-
-    private fun fetchUserId(userName: String) {
-        db.collection("user")
-            .whereEqualTo("nama", userName)
-            .get()
-            .addOnSuccessListener { querySnapshot ->
-                if (!querySnapshot.isEmpty) {
-                    val document = querySnapshot.documents[0]
-                    val userId = document.getString("id")
-                    userId?.let {
-                        USER_ID = it
-                    }
-                }
-            }
-            .addOnFailureListener { exception ->
-                // Handle failure
-            }
-    }
-
     private fun saveUserScore() {
         binding.btnSave.setOnClickListener {
 
+            val nNama = binding.etNama.text.toString()
             val nJilid0 = binding.etJilid0.text.toString()
             val nJilid1 = binding.etJilid1.text.toString()
             val nJilid2 = binding.etJilid2.text.toString()
             val nJilid3 = binding.etJilid3.text.toString()
 
-            if (TextUtils.isEmpty(nJilid0)) {
+            if (TextUtils.isEmpty(nNama)) {
+                binding.etNama.error = "Nama tidak boleh kosong"
+                return@setOnClickListener
+            } else if (TextUtils.isEmpty(nJilid0)) {
                 binding.etJilid0.error = "Nilai tidak boleh kosong"
                 return@setOnClickListener
             } else if (TextUtils.isEmpty(nJilid1)) {
@@ -131,36 +74,40 @@ class AddNilaiActivity : AppCompatActivity() {
             } else {
                 binding.progressBarDialog.root.visibility = View.VISIBLE
 
-                if (USER_ID.isNotEmpty()) {
-
-                    val newScore = Score(
-                        USER_ID,
-                        NAME,
-                        nJilid0.toInt(),
-                        nJilid1.toInt(),
-                        nJilid2.toInt(),
-                        nJilid3.toInt()
-                    )
-                    db.collection("nilai").document(USER_ID).set(newScore)
-                        .addOnSuccessListener {
-                            Toast.makeText(
-                                this,
-                                "Sukses Menambahkan Nilai",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            binding.progressBarDialog.root.visibility = View.GONE
-                            finish()
-                        }
-                        .addOnFailureListener {
-                            Toast.makeText(
-                                this,
-                                "Gagal Menambahkan Nilai",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                            binding.progressBarDialog.root.visibility = View.GONE
-                        }
-                }
-
+                val newScore = Score(
+                    null,
+                    nNama,
+                    nJilid0.toInt(),
+                    nJilid1.toInt(),
+                    nJilid2.toInt(),
+                    nJilid3.toInt()
+                )
+                db.collection("nilai").add(newScore)
+                    .addOnSuccessListener { documentReference ->
+                        val generatedId = documentReference.id
+                        db.collection("nilai").document(generatedId)
+                            .update("id", generatedId)
+                            .addOnSuccessListener {
+                                Toast.makeText(
+                                    this,
+                                    "Sukses Menambahkan Nilai",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                binding.progressBarDialog.root.visibility = View.GONE
+                                finish()
+                            }
+                            .addOnFailureListener {
+                                //Do nothing
+                            }
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(
+                            this,
+                            "Gagal Menambahkan Nilai",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        binding.progressBarDialog.root.visibility = View.GONE
+                    }
             }
         }
     }

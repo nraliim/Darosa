@@ -7,6 +7,7 @@ import com.darosa.app.R
 import com.darosa.app.data.Progress
 import com.darosa.app.data.User
 import com.darosa.app.databinding.ActivityDetailSiswaBinding
+import com.darosa.app.preference.UserPreference
 import com.darosa.app.ui.progress.DetailProgressActivity
 import com.darosa.app.utils.loadImageUrl
 
@@ -19,9 +20,9 @@ class DetailSiswaActivity : AppCompatActivity() {
         binding = ActivityDetailSiswaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         @Suppress("DEPRECATION")
         val user = intent.getParcelableExtra(EXTRA_USER) as? User
-//        intent.extras?.getParcelable(EXTRA_USER) as? User
 
         initializeToolbar()
         getData(user)
@@ -69,6 +70,7 @@ class DetailSiswaActivity : AppCompatActivity() {
     }
 
     private fun onActions(user: User?) {
+        saveUserId(user?.id.toString())
         binding.cvJilidPemula.setOnClickListener {
             val progressPemula = Progress(
                 getString(R.string.yanbua_jilid_pemula),
@@ -109,6 +111,11 @@ class DetailSiswaActivity : AppCompatActivity() {
             intent.putExtra(DetailProgressActivity.EXTRA_PROGRESS, progressTiga)
             startActivity(intent)
         }
+    }
+
+    private fun saveUserId(userId: String) {
+        val userPref = UserPreference(this)
+        userPref.setUserId(userId)
     }
 
     companion object {

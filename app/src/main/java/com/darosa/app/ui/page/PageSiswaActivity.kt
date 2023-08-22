@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.darosa.app.data.Pages
-import com.darosa.app.databinding.ActivityPageBinding
+import com.darosa.app.databinding.ActivityPageSiswaBinding
 import com.darosa.app.utils.hide
 import com.darosa.app.utils.show
 import com.google.android.exoplayer2.ExoPlayer
@@ -15,9 +15,9 @@ import com.google.android.exoplayer2.util.Util
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class PageActivity : AppCompatActivity() {
+class PageSiswaActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityPageBinding
+    private lateinit var binding: ActivityPageSiswaBinding
     private var player: ExoPlayer? = null
     private val userId = FirebaseAuth.getInstance().currentUser!!.uid
     private val db = FirebaseFirestore.getInstance()
@@ -34,7 +34,7 @@ class PageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityPageBinding.inflate(layoutInflater)
+        binding = ActivityPageSiswaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         @Suppress("DEPRECATION")
@@ -68,12 +68,19 @@ class PageActivity : AppCompatActivity() {
     private fun initializeData(pages: Pages) {
         binding.apply {
             progressBarDialog.root.show()
-            if (pages.isChecked == false) {
-                btnDone.isClickable = true
-                btnDone.isEnabled = true
-            } else {
-                btnDone.isClickable = false
-                btnDone.isEnabled = false
+            when (pages.isChecked) {
+                10L -> {
+                    btnDone.isClickable = true
+                    btnDone.isEnabled = true
+                }
+                20L -> {
+                    btnDone.isClickable = false
+                    btnDone.isEnabled = false
+                }
+                30L -> {
+                    btnDone.isClickable = false
+                    btnDone.isEnabled = false
+                }
             }
 
         }
@@ -323,7 +330,7 @@ class PageActivity : AppCompatActivity() {
                         val updatedPages = pages.map {
                             if (it["halaman"] == halaman) {
                                 it.toMutableMap().apply {
-                                    this["isChecked"] = true
+                                    this["isChecked"] = 20
                                 }
                             } else {
                                 it
