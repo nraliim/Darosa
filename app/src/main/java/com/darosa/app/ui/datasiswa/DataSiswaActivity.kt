@@ -37,11 +37,18 @@ class DataSiswaActivity : AppCompatActivity() {
             rvDataSiswa.setHasFixedSize(true)
             rvDataSiswa.layoutManager = LinearLayoutManager(applicationContext)
             rvDataSiswa.adapter = adapter
-            layoutEmptyData.root.hide()
+//            layoutEmptyData.root.hide()
         }
 
-        viewModel.allUsers.observe(this) {
-            adapter.setUser(it)
+        viewModel.allUsers.observe(this) { listUser ->
+            listUser.let {
+                if (it.isEmpty()) {
+                    binding.rvDataSiswa.hide()
+                    binding.layoutEmptyData.root.show()
+                } else {
+                    adapter.setUser(it)
+                }
+            }
         }
     }
 
